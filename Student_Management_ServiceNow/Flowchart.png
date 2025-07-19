@@ -1,0 +1,41 @@
+                ┌────────────────────────┐
+                │   User/Admin Interface │
+                └────────┬───────────────┘
+                         │
+                         ▼
+                ┌────────────────────────┐
+                │  Student Management    │
+                │   Scoped Application   │
+                └────────┬───────────────┘
+                         │
+         ┌───────────────┼────────────────┐
+         ▼               ▼                ▼
+┌────────────────┐  ┌───────────────┐ ┌─────────────────┐
+│   Student Table│  │   UI Policies │ │  Business Rules │
+│  (Custom Table)│  │               │ │                 │
+└──────┬─────────┘  └───────────────┘ └─────────────────┘
+       │
+       ▼
+┌─────────────────────────────────────┐
+│ Fields:                             │
+│ - Student ID                        │
+│ - Full Name                         │
+│ - Email                             │
+│ - Department                        │
+│ - Year                              │
+│ - Phone Number                      │
+│ - Enrollment Date                   │
+└─────────────────────────────────────┘
+       │
+       ▼
+┌──────────────────────────┐
+│ Form & List Configuration│
+│ (User views & interacts) │
+└──────────────────────────┘
+       │
+       ▼
+┌──────────────────────────┐
+│     Update Set           │
+│(Tracks all customizations│
+│ for migration/deployment)│
+└──────────────────────────┘
