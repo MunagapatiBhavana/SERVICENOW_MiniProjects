@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2025-07-11 15:15:06">
+<sys_update_set action="INSERT_OR_UPDATE">
+<application display_value="Student Management">2bd892d3476622106564d879316d4314</application>
+<base_update_set display_value="Default">1fd06d1b472222106564d879316d43ed</base_update_set>
+<batch_install_plan display_value=""/>
+<completed_by display_value=""/>
+<completed_on>2025-07-11 15:13:16</completed_on>
+<description/>
+<install_date/>
+<installed_from/>
+<is_default>false</is_default>
+<merged_to display_value=""/>
+<name>Student Management Setup</name>
+<origin_sys_id/>
+<parent display_value="Default">1fd06d1b472222106564d879316d43ed</parent>
+<release_date>2025-07-02 15:14:07</release_date>
+<remote_sys_id display_value=""/>
+<state>in progress</state>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-07-11 15:14:23</sys_created_on>
+<sys_id>e52bcfa3476e62106564d879316d43d6</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-07-11 15:14:23</sys_updated_on>
+</sys_update_set>
+</unload>
