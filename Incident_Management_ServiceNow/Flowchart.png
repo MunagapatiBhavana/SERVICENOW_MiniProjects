@@ -1,0 +1,68 @@
+                ┌──────────────────────────────┐
+                │     User Interface           │
+                │ (Employee / IT Technician)   │
+                └────────────┬─────────────────┘
+                             │
+                             ▼
+                ┌──────────────────────────────┐
+                │     Incident Management      │
+                │     Scoped Application       │
+                └────────────┬─────────────────┘
+                             │
+       ┌─────────────────────┼─────────────────────────────┐
+       ▼                     ▼                             ▼
+┌──────────────┐     ┌───────────────────────┐     ┌─────────────────────┐
+│ Incident     │     │       UI Policies     │     │    Business Rules   │
+│ Table        │     │ (Mandatory / ReadOnly │     │ (Auto state update) │
+└────┬─────────┘     │    & Visibility)      │     └─────────────────────┘
+     │              └───────────────────────┘
+     ▼
+┌────────────────────────────────────────────┐
+│ Fields:                                    │
+│ - Short Description                        │
+│ - Priority / Impact / Urgency              │
+│ - Assigned To                              │
+│ - Category / Subcategory                   │
+│ - State (New, In Progress, Resolved, etc.) │
+│ - Resolution Notes                         │
+│ - Root Cause (visible in Resolved state)   │
+└────────────────────────────────────────────┘
+     │
+     ▼
+┌─────────────────────────────┐
+│  Record Producer (Optional) │
+│ "Log an Incident" Form      │
+└─────────────────────────────┘
+     │
+     ▼
+┌─────────────────────────────┐
+│     Flow Designer /         │
+│  Workflow for assignment    │
+│  and state transitions      │
+└────────────┬────────────────┘
+             │
+      ┌──────▼───────┐
+      │ Assigned To  │
+      │ (Technician) │
+      └──────┬───────┘
+             ▼
+  ┌──────────────────────────────┐
+  │ Technician Resolves Incident │
+  └────────────┬─────────────────┘
+               ▼
+   ┌────────────────────────────┐
+   │ Email Notification (User) │
+   └────────────┬───────────────┘
+                ▼
+   ┌────────────────────────────┐
+   │ State Updated to Resolved  │
+   └────────────┬───────────────┘
+                ▼
+   ┌────────────────────────────┐
+   │ Incident Closed by User    │
+   └────────────┬───────────────┘
+                ▼
+   ┌────────────────────────────┐
+   │       Update Set           │
+   │  (Export for Deployment)   │
+   └────────────────────────────┘
