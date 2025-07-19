@@ -1,0 +1,75 @@
+                ┌──────────────────────────────┐
+                │     User Interface           │
+                │ (Employee / Change Manager)  │
+                └────────────┬─────────────────┘
+                             │
+                             ▼
+                ┌──────────────────────────────┐
+                │     Change Management        │
+                │     Scoped Application       │
+                └────────────┬─────────────────┘
+                             │
+       ┌─────────────────────┼──────────────────────────────┐
+       ▼                     ▼                              ▼
+┌──────────────┐     ┌───────────────────────┐      ┌──────────────────────┐
+│ Change Table │     │       UI Policies     │      │    Business Rules    │
+│ (change_request)│  │ (Mandatory / Visibility)│      │ (Auto state update) │
+└────┬─────────┘     └───────────────────────┘      └──────────────────────┘
+     │
+     ▼
+┌───────────────────────────────────────────────┐
+│ Fields:                                       │
+│ - Short Description                           │
+│ - Type (Normal, Standard, Emergency)          │
+│ - Priority / Risk / Impact                    │
+│ - Assigned To / Change Owner                  │
+│ - State (New, Assess, Authorize, etc.)        │
+│ - Planned Start & End Date                    │
+│ - CAB Approval, Implementation Plan, Testing  │
+│ - Closure Notes                               │
+└───────────────────────────────────────────────┘
+     │
+     ▼
+┌────────────────────────────────────┐
+│ Change Request Created (New)       │
+└────────────────────────────────────┘
+     │
+     ▼
+┌────────────────────────────────────┐
+│ Risk Assessment & Planning (Assess)│
+└────────────────────────────────────┘
+     │
+     ▼
+┌──────────────────────────────────────┐
+│ CAB Approval (Authorize stage)       │
+│ (Change Advisory Board)              │
+└──────────────────────────────────────┘
+     │
+     ▼
+┌────────────────────────────────────┐
+│ Change Implemented by Technician   │
+│ (Implementation Stage)             │
+└────────────────────────────────────┘
+     │
+     ▼
+┌────────────────────────────────────┐
+│ Testing & Review                   │
+│ (Post-implementation validation)   │
+└────────────────────────────────────┘
+     │
+     ▼
+┌────────────────────────────────────┐
+│ Change Closed by Manager           │
+│ (Closure Stage)                    │
+└────────────────────────────────────┘
+     │
+     ▼
+┌────────────────────────────────────┐
+│ Notifications Sent to Stakeholders│
+└────────────────────────────────────┘
+     │
+     ▼
+┌──────────────────────────────┐
+│     Update Set Export        │
+│  (For Deployment/Backup)     │
+└──────────────────────────────┘
