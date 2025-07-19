@@ -1,0 +1,62 @@
+                ┌────────────────────────┐
+                │   User Interface       │
+                │ (Employee / Manager)   │
+                └────────┬───────────────┘
+                         │
+                         ▼
+                ┌────────────────────────┐
+                │   Leave Management     │
+                │   Scoped Application   │
+                └────────┬───────────────┘
+                         │
+         ┌───────────────┼────────────────────────┐
+         ▼               ▼                        ▼
+┌────────────────┐  ┌────────────────────┐  ┌───────────────────┐
+│ Leave Request  │  │     UI Policies    │  │   Business Rules  │
+│   Table        │  │ (Field visibility) │  │ (Auto-assign mgr) │
+└──────┬─────────┘  └────────────────────┘  └───────────────────┘
+       │
+       ▼
+┌───────────────────────────────────────┐
+│ Fields:                               │
+│ - Leave Type                          │
+│ - Start Date                          │
+│ - End Date                            │
+│ - Reason                              │
+│ - Requested By (auto)                 │
+│ - Status (Requested, Approved, etc.) │
+│ - Manager (auto-filled)              │
+└───────────────────────────────────────┘
+       │
+       ▼
+┌─────────────────────────────┐
+│  Record Producer (Catalog)  │
+│ "Apply for Leave" form      │
+└─────────────────────────────┘
+       │
+       ▼
+┌─────────────────────────────┐
+│   Flow Designer / Workflow  │
+│ (Auto-approval routing)     │
+└──────────┬──────────────────┘
+           │
+     ┌─────▼──────┐
+     │  Manager   │
+     │ Approves/  │
+     │ Rejects    │
+     └─────┬──────┘
+           ▼
+  ┌──────────────────────────┐
+  │ Email Notification Sent  │
+  └──────────────────────────┘
+           │
+           ▼
+  ┌──────────────────────────┐
+  │ Status Updated in Table  │
+  └──────────────────────────┘
+           │
+           ▼
+  ┌──────────────────────────┐
+  │      Update Set          │
+  │ (Export for deployment)  │
+  └──────────────────────────┘
