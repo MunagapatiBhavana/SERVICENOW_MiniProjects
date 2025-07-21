@@ -1,0 +1,83 @@
+                ┌──────────────────────────────┐
+                │      User Interface          │
+                │ (Analyst / Problem Manager)  │
+                └────────────┬─────────────────┘
+                             │
+                             ▼
+                ┌──────────────────────────────┐
+                │     Problem Management       │
+                │     Scoped Application       │
+                └────────────┬─────────────────┘
+                             │
+       ┌─────────────────────┼──────────────────────────────┐
+       ▼                     ▼                              ▼
+┌──────────────┐     ┌───────────────────────┐      ┌──────────────────────┐
+│ Problem Table│     │       UI Policies     │      │    Business Rules    │
+│(problem table)│     │ (Show/Hide, Mandatory)│      │ (Auto state logic)   │
+└────┬─────────┘     └───────────────────────┘      └──────────────────────┘
+     │
+     ▼
+┌───────────────────────────────────────────────┐
+│ Fields:                                       │
+│ - Short Description                           │
+│ - Impact / Urgency / Priority                 │
+│ - Assigned To / Problem Manager               │
+│ - Related Incidents                           │
+│ - Workaround (if available)                   │
+│ - Root Cause                                   │
+│ - Known Error (Yes/No)                        │
+│ - State (New, Investigating, Resolved, Closed)│
+│ - Resolution Plan, Closure Notes              │
+└───────────────────────────────────────────────┘
+     │
+     ▼
+┌────────────────────────────────────┐
+│ Problem Detected / Reported        │
+└────────────────────────────────────┘
+     │
+     ▼
+┌────────────────────────────────────┐
+│ Problem Logging & Categorization   │
+│ (Based on impact/urgency)          │
+└────────────────────────────────────┘
+     │
+     ▼
+┌────────────────────────────────────┐
+│ Investigation & Diagnosis          │
+│ (Root Cause Analysis)              │
+└────────────────────────────────────┘
+     │
+     ▼
+┌────────────────────────────────────┐
+│ Workaround Defined (if any)        │
+│ (Temporary resolution)             │
+└────────────────────────────────────┘
+     │
+     ▼
+┌────────────────────────────────────┐
+│ Known Error Recorded               │
+│ (KB article auto-generated)        │
+└────────────────────────────────────┘
+     │
+     ▼
+┌────────────────────────────────────┐
+│ Problem Resolved                   │
+│ (Fix implemented)                  │
+└────────────────────────────────────┘
+     │
+     ▼
+┌────────────────────────────────────┐
+│ Problem Closed                     │
+│ (Closure notes updated)            │
+└────────────────────────────────────┘
+     │
+     ▼
+┌────────────────────────────────────┐
+│ Notifications Sent to Stakeholders│
+└────────────────────────────────────┘
+     │
+     ▼
+┌──────────────────────────────┐
+│     Update Set Export        │
+│  (For Deployment/Backup)     │
+└──────────────────────────────┘
