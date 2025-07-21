@@ -32,6 +32,12 @@ SERVICENOW_MiniProjects/
 │ ├── Flowchart.png
 │ ├── ScreenShots
 
+├── Problem_Management_ServiceNow/
+│ ├── Problem_Management_report.docx
+│ ├── README.md
+│ ├── Flowchart.png
+│ ├── ScreenShots
+
 └── README.md
 ```
 
@@ -84,6 +90,19 @@ SERVICENOW_MiniProjects/
   - Automated updates via Business Rules
   - Change status flow from draft to closure
 - **Why it's useful:** Demonstrates advanced field management, risk categorization, and approval workflows in ITSM.
+
+---
+
+### 5. Problem Management (Problem_Management_ServiceNow)
+- **Purpose:** Implement a structured system to track, analyze, and resolve the root causes of recurring incidents using the ITIL Problem Management lifecycle.
+- **Features:**
+  - Problem table with fields for Root Cause, Workaround, Known Error, and Related Incidents
+  - UI Policies for dynamic field visibility based on state (e.g., Investigating, Resolved)
+  - Business Rules to validate resolution, auto-assign managers, and manage state transitions
+  - KB article generation for known errors with seamless Knowledge Base integration
+  - **Why it's useful:** Demonstrates lifecycle automation, root cause tracking, knowledge reuse, and smart incident-problem linking in ITSM workflows.
+ 
+  ---
 
 ## 📘 Quick Start Guide
 
