@@ -38,6 +38,14 @@ SERVICENOW_MiniProjects/
 │ ├── Flowchart.png
 │ ├── ScreenShots
 
+├── Transform_Map_ServiceNow/
+│ ├── Transform_Map_report.docx
+│ ├── README.md
+│ ├── Flowchart.png
+│ ├── ScreenShots
+│ ├── Test_data.xlsx
+│ ├── Transform_Script.js
+
 └── README.md
 ```
 
@@ -103,6 +111,16 @@ SERVICENOW_MiniProjects/
   - **Why it's useful:** Demonstrates lifecycle automation, root cause tracking, knowledge reuse, and smart incident-problem linking in ITSM workflows.
  
   ---
+
+  ### 6. Transform Map Automation (Transform_Map_ServiceNow)
+  - **Purpose:** Automate the bulk import, transformation, and validation of Excel/CSV data into ServiceNow tables while enforcing data integrity and reducing manual errors.
+  - **Features:**
+        - Import Set table to temporarily hold uploaded Excel/CSV data
+        - Transform Map with field mapping from source (Import Set) to target (custom table like u_student_records)
+        - Transform Scripts to enforce validations and prevent duplicate records (e.g., based on email)
+        - UI Policies (optional) to control form behavior and enforce field visibility or mandatory conditions if exposed via UI
+        - System Logs to track skipped records, duplicate entries, and transformation success
+        - Notifications (optional) to inform users or admins about the import status
 
 ## 📘 Quick Start Guide
 
