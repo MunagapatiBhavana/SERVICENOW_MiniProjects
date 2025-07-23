@@ -1,0 +1,63 @@
+                ┌──────────────────────────────┐
+                │     User Interface           │
+                │  (Admin / Data Importer)     │
+                └────────────┬─────────────────┘
+                             │
+                             ▼
+                ┌──────────────────────────────┐
+                │   Bulk Data Import Process   │
+                │  (Transform Map Application) │
+                └────────────┬─────────────────┘
+                             │
+       ┌─────────────────────┼────────────────────────────────────┐
+       ▼                     ▼                                    ▼
+┌──────────────┐     ┌───────────────────────┐         ┌──────────────────────┐
+│ Import Set   │     │     Transform Map     │         │   Transform Scripts   │
+│ (Source Table)│     │ (Field Mapping Logic)│         │ (Validation, Dup Check)│
+└────┬─────────┘     └───────────────────────┘         └────────────┬─────────┘
+     │                                                           ▼
+     │                                             ┌────────────────────────────┐
+     ▼                                             │ Duplicate Check (e.g.,     │
+┌───────────────────────────────────────────────┐ │ email already exists?)     │
+│ Uploaded Excel (e.g., StudentData.xlsx)       │ └────────────┬───────────────┘
+│ Fields:                                       │              │
+│ - Name                                        │              ▼
+│ - Email                                       │  ┌────────────────────────────┐
+│ - Phone                                       │  │ New Record Inserted into   │
+│ - Course                                      │  │ Target Table (if unique)   │
+└───────────────────────────────────────────────┘  └────────────┬───────────────┘
+                                                                │
+                                                                ▼
+                                                ┌──────────────────────────────┐
+                                                │ Target Table (Clean Data):   │
+                                                │ u_student_records            │
+                                                │ Fields:                      │
+                                                │ - Name, Email, Phone, Course │
+                                                └────────────┬─────────────────┘
+                                                             │
+                                                             ▼
+                                                ┌──────────────────────────────┐
+                                                │ Review Transformed Data      │
+                                                │ (List View / Reporting)      │
+                                                └────────────┬─────────────────┘
+                                                             │
+                                                             ▼
+                                                ┌──────────────────────────────┐
+                                                │ Notifications (Optional)     │
+                                                │ Success / Duplicates Skipped │
+                                                └────────────┬─────────────────┘
+                                                             │
+                                                             ▼
+                                                ┌──────────────────────────────┐
+                                                │ Update Set Export            │
+                                                │ (For Deployment / Backup)    │
+                                                └──────────────────────────────┘
+
+| Component             | Description                                              |
+| --------------------- | -------------------------------------------------------- |
+| **Import Set**        | Temporary table where Excel/CSV data is loaded           |
+| **Transform Map**     | Defines mapping from import set to target table          |
+| **Transform Script**  | Custom logic to validate and prevent duplicates          |
+| **Target Table**      | Final destination of clean, validated data               |
+| **Notifications**     | Optional emails/logs on success/failure                  |
+| **Update Set Export** | Export feature for migrating the app to another instance |
